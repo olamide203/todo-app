@@ -1,0 +1,217 @@
+/* colors*/
+:root {
+    --primary-red: hsl(0, 100%, 74%);
+    --primary-green: hsl(154, 59%, 51%);
+    --accent-blue: hsl(248, 32%, 49%);
+    --neutral-100: hsl(246, 25%, 77%);
+    --neutral-400: hsl(249, 10%, 26%);
+    font-size: 16px;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    align-items: center;
+    justify-content: center;
+    background: url("../images/bg-intro-desktop.png") center/cover no-repeat,
+        linear-gradient(var(--primary-red), var(--primary-red));
+}
+main {
+    display: grid;
+    padding: 50px 12% 0;
+    min-height: 100vh;
+    grid-template-columns: 1fr auto;
+    justify-content: center;
+    align-items: center;
+    column-gap: 60px;
+    font-family: "Poppins";
+    color: #fff;
+}
+
+.intro {
+    display: grid;
+    align-self: center;
+    grid-template-rows:auto 1fr;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    height: 100%;
+    &__heading {
+        justify-self: center;
+        align-self: end;
+        line-height: 1.2;
+        font-size: 2.5rem;
+    }
+    &__todos {
+        align-self: center;
+        display: grid;
+        grid-auto-flow: row;
+        row-gap: 20px;
+    }
+}
+.todo{
+    padding: 20px;
+    width:100%;
+    background-color: var(--accent-blue);
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
+        rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    &__button{
+        border: none;
+        margin-top: 4px;
+        padding-inline: 10px;
+        padding-block: 5px;
+        border-radius: 5px;
+        color: #fff;
+    }
+    &__delete{
+        background-color: var(--primary-red);
+    }
+    &__edit{
+        background-color: var(--primary-green);
+    }
+    &__button:active{
+        background-color: var(--neutral-100);
+        transform: scale(0.9);
+    }
+    
+}
+.signup {
+    display: grid;
+    grid-auto-flow: row;
+    row-gap: 30px;
+    &__card {
+        align-self: center;
+        background-color: #fff;
+        padding: 30px;
+        display: grid;
+        grid-auto-flow: row;
+        row-gap: 20px;
+        border-radius: 5px;
+        box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
+            rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    }
+    &__button {
+        width: 100%;
+        background-color: var(--primary-green);
+        border-radius: 5px;
+        border: none;
+        color: #fff;
+        text-transform: uppercase;
+        padding: 15px 0;
+        margin-top: 10px;
+        border-bottom: 3px solid var(--primary-green);
+    }
+    &__button:hover {
+        cursor: pointer;
+        background-color: hsla(154, 59%, 51%, 0.8);
+    }
+}
+
+.input-group {
+    display: grid;
+    gap: 2px;
+    padding: 8px;
+    input {
+        height: 50px;
+        padding: 20px;
+        border: 1px solid var(--neutral-100);
+        border-radius: 5px;
+        font-size: 0.9rem;
+    }
+    input::placeholder {
+        color: var(--neutral-100);
+        font-weight: 600;
+    }
+    input:focus {
+        border: 1px solid var(--accent-blue);
+        border-bottom: 2px solid var(--neutral-100);
+        outline: none;
+    }
+    &__help {
+        display: none;
+        color: hsl(0, 100%, 74%);
+        font-size: 0.7rem;
+        font-weight: 600;
+        font-style: italic;
+        justify-self: end;
+        position: relative;
+        transform: scale(0);
+        transition: all 4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    &__help:before {
+        content: " ";
+        background: url("../images/icon-error.svg") center/contain no-repeat;
+        height: 20px;
+        width: 20px;
+        position: absolute;
+        right: 10px;
+        top: -35px;
+    }
+}
+
+.card__footnote {
+    color: var(--neutral-100);
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-align: center;
+    padding-top: 5px;
+    span {
+        color: var(--primary-red);
+        font-weight: 700;
+    }
+}
+.invalid {
+    .input-group__help {
+        display: block;
+        transform: scale(1);
+    }
+    input {
+        border: 1px solid var(--primary-red);
+    }
+}
+
+.bold {
+    font-weight: 700;
+}
+
+@media only screen and (max-width: 992px) {
+    body{
+        background: url("../images/bg-intro-mobile.png") center/cover no-repeat,
+            linear-gradient(var(--primary-red), var(--primary-red));
+    }
+    main {
+        margin: 0 5%;
+        min-height: auto;
+        padding: 80px 20px;
+        grid-template-columns: 1fr;
+        grid-auto-flow: row;
+        row-gap: 80px;
+    }
+    .intro {
+        display: grid;
+        width: 100%;
+        grid-template-rows: auto 1fr;
+        grid-template-columns: 1fr;
+        align-items: center;
+        justify-content: center;
+        &__heading {
+            justify-self: center;
+            text-align: center;
+            width:100%;
+        }
+
+    }
+    .signup {
+        max-width: 500px;
+        justify-self: center;
+        &__heading {
+            padding: 15px 20%;
+        }
+        &__heading,
+        &__card {
+            justify-self: center;
+            width: 100%;
+        }
+    }
+}

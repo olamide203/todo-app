@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Intro component with sign up form</title>
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="./css/fonts.css" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  </head>
+  <body>
+    <main>
+      <section class="intro">
+        <h1 class="intro__heading">CRUD TODO</h1>
+        <div class="intro__todos">
+          <div class="todo">
+            <h4 class="todo__title">28th july 2022</h4>
+            <p class="todo__content">complete the todo application crud operations</p>
+            <button class="todo__button todo__delete">DELETE</button>
+            <button class="todo__button todo__edit">COMPLETE</button>
+          </div>
+            <div class="todo">
+            <h4 class="todo__title">28th july 2022</h4>
+            <p class="todo__content">complete the todo application crud operations</p>
+            <button class="todo__button todo__delete">DELETE</button>
+            <button class="todo__button todo__edit">COMPLETE</button>
+          </div>
+          <div class="todo">
+            <h4 class="todo__title">28th july 2022</h4>
+            <p class="todo__content">complete the todo application crud operations</p>
+            <button class="todo__button todo__delete">DELETE</button>
+            <button class="todo__button todo__edit">COMPLETE</button>
+          </div>
+        </div>
+      </section>
+        <div class="signup__card">
+          <form action="/todos" method="post" id="signup__form">
+            <div class="input-group">
+              <input
+                type="text"
+                placeholder="title"
+                id="firstname"
+                name="title"
+              />
+              <span class="input-group__help">title cannot be empty</span>
+            </div>
+
+            <div class="input-group">
+              <textarea
+                type="text"
+                placeholder="todo"
+                id="lastname"
+                name="todo"
+              ></textarea>
+              <span class="input-group__help">Todo cannot be empty</span>
+            </div>
+          </form>
+          <div class="card__footer">
+            <button type="submit" form="signup__form" class="signup__button">
+              Create Todo
+            </button>
+            <p class="card__footnote">
+              By clicking the button, you are agreeing to our
+              <span>Terms and Services</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="./src/app.js" type="module"></script>
+  </body>
+</html>
