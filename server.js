@@ -1,7 +1,9 @@
 // import express;
 const express = require('express');
 const logger = require('./middlewares/logger');
+const path = require('path')
 const todosRouter = require('./routes/todos');
+const { dirname } = require('path');
 
 // create an instance of expressapp.use(logger);app.use(logger);
 const app = express();
@@ -13,6 +15,9 @@ app.use(express.urlencoded({extended: true}))
 // use the todos router as a middleware
 app.use('/todos', todosRouter);
 
+app.get('/',(req, res)=>{
+  res.sendFile(path.join(__dirname, './pages/index.html'))
+})
 // listen to login post request
 app.post('/login', (req, res) => {
   console.log(req.body);
