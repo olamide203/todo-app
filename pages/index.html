@@ -24,8 +24,13 @@
       <section class="intro">
         <h1 class="intro__heading">CRUD TODO</h1>
         <div class="intro__todos">
-         
-   
+
+          <div class="todo">
+            <h4 class="todo__title">${item.title}</h4>
+            <p class="todo__content">${item.todo}</p>
+            <button class="todo__button todo__delete" id="${item.id}">DELETE</button>
+            <button class="todo__button todo__edit" id="${item.id}">COMPLETE</button>
+          </div>
         </div>
       </section>
         <div class="signup__card">

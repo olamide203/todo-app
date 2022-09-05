@@ -19,8 +19,9 @@ body {
 }
 main {
     display: grid;
-    padding: 50px 12% 0;
+    padding: 50px 12%;
     min-height: 100vh;
+    height: 100%;
     grid-template-columns: 1fr auto;
     justify-content: center;
     align-items: center;
@@ -35,7 +36,6 @@ main {
     grid-template-rows:auto 1fr;
     grid-template-columns: 1fr;
     gap: 20px;
-    height: 100%;
     &__heading {
         justify-self: center;
         align-self: end;
