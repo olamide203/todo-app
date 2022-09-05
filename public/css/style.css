@@ -28,8 +28,9 @@ body {
 main {
   display: -ms-grid;
   display: grid;
-  padding: 50px 12% 0;
+  padding: 50px 12%;
   min-height: 100vh;
+  height: 100%;
   -ms-grid-columns: 1fr auto;
       grid-template-columns: 1fr auto;
   -webkit-box-pack: center;
@@ -54,7 +55,6 @@ main {
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
   gap: 20px;
-  height: 100%;
 }
 
 .intro__heading {
